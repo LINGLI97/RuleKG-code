@@ -1,0 +1,59 @@
+#################### parameter settings ####################
+dataset:alibaba-fashion
+data_path:data/
+load_rules:False
+epoch:500
+batch_size:1024
+test_batch_size:1024
+dim:64
+l2:1e-05
+lr:0.0001
+sim_regularity:0.0001
+inverse_r:True
+node_dropout:True
+node_dropout_rate:0.5
+mess_dropout:True
+mess_dropout_rate:0.1
+batch_test_flag:True
+channel:64
+cuda:True
+gpu_id:0
+edge_threshold:64
+adj_epoch:1
+in_channel:[64, 32]
+out_channel:[32, 64]
+pretrain_s:False
+pretrain_r:False
+freeze_s:False
+k_step:4
+num_sample:32
+gamma:0.99
+Ks:[20, 40, 60, 80, 100]
+test_flag:part
+n_factors:4
+ind:distance
+context_hops:3
+save:True
+out_dir:./weights/
+rank:[20, 40, 60, 80, 100]
+flag_step:10
+#################### experimental settings ####################
+0) Model: KGIN
+1) recommender: GCN
+2) sampler: random sampling
+#################### start training ####################
+Epoch:0/500, one epoch(train+test/hour): 0.13377893189589182, training time: 334.48116087913513, testing time: 147.12299180030823
+recall    : [0.03971994 0.06245595 0.08165567 0.09796516 0.1120189 ]
+ndcg      : [0.02330653 0.02965538 0.0343036  0.03795807 0.04091956]
+precision : [0.00576363 0.00456471 0.00398522 0.00359709 0.00329283]
+hit_ratio : [0.10798584 0.16521686 0.21015794 0.24721951 0.2773778 ]
+Epoch:4/500, one epoch(train+test/hour): 0.13605973541736602, training time: 339.3308355808258, testing time: 150.48420929908752
+recall    : [0.0644964  0.09829621 0.12419305 0.14522509 0.16429321]
+ndcg      : [0.03879482 0.04821565 0.05450492 0.05921231 0.0632374 ]
+precision : [0.00932031 0.00713797 0.00604197 0.005313   0.00481565]
+hit_ratio : [0.16925249 0.24786451 0.30254166 0.34441462 0.38029949]
+Epoch:8/500, one epoch(train+test/hour): 0.13502768682108984, training time: 335.06459069252014, testing time: 151.03508019447327
+recall    : [0.08768968 0.12800415 0.15806473 0.18231036 0.20267655]
+ndcg      : [0.0523553  0.06363177 0.07093873 0.07637558 0.08069023]
+precision : [0.01274929 0.00935757 0.00773162 0.00670543 0.00597518]
+hit_ratio : [0.22390349 0.31087442 0.37006659 0.41423192 0.44898368]

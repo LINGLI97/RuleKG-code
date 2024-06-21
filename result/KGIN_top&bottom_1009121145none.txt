@@ -1,0 +1,46 @@
+#################### parameter settings ####################
+dataset:alibaba-fashion
+data_path:data/
+load_rules:True
+which_rule:21
+epoch:150
+batch_size:1024
+test_batch_size:1024
+dim:64
+l2:1e-05
+lr:0.0001
+sim_regularity:0.0001
+inverse_r:False
+node_dropout:True
+node_dropout_rate:0.5
+mess_dropout:True
+mess_dropout_rate:0.1
+batch_test_flag:True
+channel:64
+cuda:True
+gpu_id:6
+edge_threshold:64
+adj_epoch:1
+in_channel:[64, 32]
+out_channel:[32, 64]
+description:none
+pretrain_s:False
+pretrain_r:False
+freeze_s:False
+k_step:1
+num_sample:32
+gamma:0.99
+Ks:[20, 40, 60, 80, 100]
+test_flag:part
+n_factors:4
+ind:distance
+context_hops:3
+save:True
+out_dir:./weights/
+rank:[20, 40, 60, 80, 100]
+flag_step:10
+#################### experimental settings ####################
+0) Model: KGIN
+1) recommender: GCN
+2) sampler: random sampling
+#################### start training ####################

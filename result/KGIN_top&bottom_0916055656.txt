@@ -1,0 +1,59 @@
+#################### parameter settings ####################
+dataset:alibaba-fashion
+data_path:data/
+load_rules:True
+epoch:150
+batch_size:1024
+test_batch_size:1024
+dim:64
+l2:1e-05
+lr:0.0001
+sim_regularity:0.0001
+inverse_r:True
+node_dropout:True
+node_dropout_rate:0.5
+mess_dropout:True
+mess_dropout_rate:0.1
+batch_test_flag:True
+channel:64
+cuda:True
+gpu_id:0
+edge_threshold:64
+adj_epoch:1
+in_channel:[64, 32]
+out_channel:[32, 64]
+pretrain_s:False
+pretrain_r:False
+freeze_s:False
+k_step:1
+num_sample:32
+gamma:0.99
+Ks:[20, 40, 60, 80, 100]
+test_flag:part
+n_factors:4
+ind:distance
+context_hops:3
+save:True
+out_dir:./weights/
+rank:[20, 40, 60, 80, 100]
+flag_step:10
+#################### experimental settings ####################
+0) Model: KGIN
+1) recommender: GCN
+2) sampler: random sampling
+#################### start training ####################
+Epoch:0/150, one epoch(train+test/hour): 0.2496519214577145, training time: 717.1903891563416, testing time: 181.5565254688263
+recall    : [0.03722516 0.05931037 0.07716042 0.09270116 0.10609223]
+ndcg      : [0.02091031 0.02710865 0.03144321 0.03492119 0.03775676]
+precision : [0.00549953 0.00440411 0.00381932 0.00344129 0.00315276]
+hit_ratio : [0.10361899 0.15991737 0.20233945 0.23782337 0.26690956]
+Epoch:1/150, one epoch(train+test/hour): 0.2480921432044771, training time: 714.2644593715668, testing time: 178.86725401878357
+recall    : [0.04432324 0.0705699  0.09153121 0.10888748 0.12444641]
+ndcg      : [0.02516267 0.03250429 0.03757321 0.04144628 0.04473527]
+precision : [0.00645875 0.00517354 0.0044758  0.00399739 0.00366101]
+hit_ratio : [0.12074646 0.18566523 0.23427585 0.27168607 0.30394498]
+Epoch:2/150, one epoch(train+test/hour): 0.24792053315374588, training time: 711.0576636791229, testing time: 181.4562532901764
+recall    : [0.05131631 0.07983076 0.10231031 0.12108464 0.13808706]
+ndcg      : [0.02891659 0.03687698 0.04233113 0.04652476 0.05010838]
+precision : [0.00744892 0.00582704 0.0049934  0.00443941 0.00405324]
+hit_ratio : [0.13776062 0.20646224 0.25714734 0.29685866 0.33080852]

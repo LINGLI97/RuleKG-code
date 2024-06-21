@@ -1,0 +1,71 @@
+#################### parameter settings ####################
+dataset:alibaba-fashion
+data_path:data/
+load_rules:True
+which_rule:6
+epoch:500
+batch_size:1024
+test_batch_size:1024
+dim:64
+l2:1e-05
+lr:0.0001
+sim_regularity:0.0001
+inverse_r:True
+node_dropout:True
+node_dropout_rate:0.5
+mess_dropout:True
+mess_dropout_rate:0.1
+batch_test_flag:True
+channel:64
+cuda:True
+gpu_id:0
+edge_threshold:64
+adj_epoch:1
+in_channel:[64, 32]
+out_channel:[32, 64]
+description:file_org_2
+pretrain_s:False
+pretrain_r:False
+freeze_s:False
+k_step:1
+num_sample:32
+gamma:0.99
+Ks:[20, 40, 60, 80, 100]
+test_flag:part
+n_factors:4
+ind:distance
+context_hops:3
+save:True
+out_dir:./weights/
+rank:[20, 40, 60, 80, 100]
+flag_step:30
+#################### experimental settings ####################
+0) Model: KGIN
+1) recommender: GCN
+2) sampler: random sampling
+#################### start training ####################
+Epoch:0/500, one epoch(train+test/hour): 0.20795799612998964, training time: 589.9225897789001, testing time: 158.72617268562317
+recall    : [0.04306845 0.06826827 0.08770577 0.10449383 0.11962546]
+ndcg      : [0.02503006 0.03204864 0.03675696 0.0405175  0.0437073 ]
+precision : [0.00632583 0.00501011 0.00429712 0.00384943 0.00352608]
+hit_ratio : [0.11794854 0.17976431 0.22416498 0.26106094 0.29304965]
+Epoch:1/500, one epoch(train+test/hour): 0.2044375627570682, training time: 580.1957490444183, testing time: 155.77947473526
+recall    : [0.05143443 0.08044813 0.10314946 0.12277775 0.13991289]
+ndcg      : [0.02989067 0.03800254 0.04350797 0.04790532 0.05150899]
+precision : [0.00748553 0.00588435 0.00504149 0.00451274 0.00411207]
+hit_ratio : [0.13851022 0.20830137 0.25907364 0.29992678 0.33392023]
+Epoch:2/500, one epoch(train+test/hour): 0.2060287132528093, training time: 584.5336215496063, testing time: 157.16974139213562
+recall    : [0.05686729 0.08802722 0.11216976 0.13280219 0.15070709]
+ndcg      : [0.03339709 0.04207877 0.04792404 0.052531   0.05631177]
+precision : [0.00827871 0.00643043 0.00547149 0.00486379 0.00442272]
+hit_ratio : [0.15230807 0.22535039 0.27748239 0.31977373 0.35462137]
+Epoch:3/500, one epoch(train+test/hour): 0.2050630095269945, training time: 581.5154323577881, testing time: 156.71140027046204
+recall    : [0.06073366 0.09345367 0.11854431 0.13975138 0.15792618]
+ndcg      : [0.03617032 0.0452942  0.0513756  0.05610426 0.05994772]
+precision : [0.00884527 0.00682571 0.00578847 0.00512092 0.00463723]
+hit_ratio : [0.16176522 0.2375183  0.29080085 0.33331881 0.36824489]
+Epoch:4/500, one epoch(train+test/hour): 0.2054943498637941, training time: 579.7277889251709, testing time: 160.05186772346497
+recall    : [0.06527654 0.09919412 0.124811   0.14648795 0.16504548]
+ndcg      : [0.03910528 0.04856087 0.05477659 0.05961998 0.06353072]
+precision : [0.00947676 0.00723472 0.00608918 0.00536998 0.00484407]
+hit_ratio : [0.17232062 0.2492504  0.30345687 0.34696848 0.38177254]

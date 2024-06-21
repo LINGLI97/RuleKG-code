@@ -1,0 +1,54 @@
+#################### parameter settings ####################
+dataset:alibaba-fashion
+data_path:data/
+load_rules:True
+epoch:150
+batch_size:1024
+test_batch_size:1024
+dim:64
+l2:1e-05
+lr:0.0001
+sim_regularity:0.0001
+inverse_r:True
+node_dropout:True
+node_dropout_rate:0.5
+mess_dropout:True
+mess_dropout_rate:0.1
+batch_test_flag:True
+channel:64
+cuda:True
+gpu_id:0
+edge_threshold:64
+adj_epoch:1
+in_channel:[64, 32]
+out_channel:[32, 64]
+pretrain_s:False
+pretrain_r:False
+freeze_s:False
+k_step:1
+num_sample:32
+gamma:0.99
+Ks:[20, 40, 60, 80, 100]
+test_flag:part
+n_factors:4
+ind:distance
+context_hops:3
+save:True
+out_dir:./weights/
+rank:[20, 40, 60, 80, 100]
+flag_step:10
+#################### experimental settings ####################
+0) Model: KGIN
+1) recommender: GCN
+2) sampler: random sampling
+#################### start training ####################
+Epoch:0/150, one epoch(train+test/hour): 0.4320857493082682, training time: 1393.5208733081818, testing time: 161.9878225326538
+recall    : [0.03746439 0.05949276 0.07729954 0.09222912 0.10601733]
+ndcg      : [0.0210141  0.02718009 0.0314959  0.03484015 0.03775353]
+precision : [0.00552916 0.00440825 0.00381598 0.00342026 0.00314518]
+hit_ratio : [0.10390663 0.16003068 0.20214769 0.2356966  0.26589847]
+Epoch:1/150, one epoch(train+test/hour): 0.4740998114479913, training time: 1541.8242301940918, testing time: 164.93508982658386
+recall    : [0.0443534  0.07043907 0.0907569  0.10841635 0.12416525]
+ndcg      : [0.02521336 0.03247864 0.03740342 0.0413569  0.04468657]
+precision : [0.00646834 0.00514914 0.0044328  0.00398323 0.00365595]
+hit_ratio : [0.12080748 0.18495049 0.2320532  0.27076215 0.30366606]
